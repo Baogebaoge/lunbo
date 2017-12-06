@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>lunbo</title>
+	<link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+	<div class="box">
+		<div class="zuo">
+			<ul class="banner_left">
+				<li class="xuan">
+					<a href="">手机 电话卡</a>
+					<div class="ban_dw">1170011273</div>
+				</li>
+				<li class="xuan">
+					<a href="">手机 电话卡</a>
+					<div class="ban_dw">1170011273</div>
+				</li>
+				<li class="xuan">
+					<a href="">手机 电话卡</a>
+					<div class="ban_dw">1170011273</div>
+				</li>
+				<li class="xuan">
+					<a href="">手机 电话卡</a>
+					<div class="ban_dw">1170011273</div>
+				</li>
+				<li class="xuan">
+					<a href="">手机 电话卡</a>
+					<div class="ban_dw">1170011273</div>
+				</li>
+				<li class="xuan">
+					<a href="">手机 电话卡</a>
+					<div class="ban_dw">1170011273</div>
+				</li>
+				<li class="xuan">
+					<a href="">手机 电话卡</a>
+					<div class="ban_dw">1170011273</div>
+				</li>
+				<li class="xuan">
+					<a href="">手机 电话卡</a>
+					<div class="ban_dw">1170011273</div>
+				</li>
+				<li class="xuan">
+					<a href="">手机 电话卡</a>
+					<div class="ban_dw">1170011273</div>
+				</li>
+				<li class="xuan">
+					<a href="">手机 电话卡</a>
+					<div class="ban_dw">1170011273</div>
+				</li>
+			</ul>
+		</div>
+		<a href="" class="con con_active"><img src="img/b.jpg" alt=""></a>
+		<a href="" class="con"><img src="img/b3.jpg" alt=""></a>
+		<a href="" class="con"><img src="img/b4.jpg" alt=""></a>
+		<a href="" class="con"><img src="img/b5.jpg" alt=""></a>
+		<a href="" class="con"><img src="img/b6.png" alt=""></a>
+		<a href="" class="con"><img src="img/b7.jpg" alt=""></a>
+		<div class="lun">
+			<ul>
+				<li class="dian active"></li>
+				<li class="dian"></li>
+				<li class="dian"></li>
+				<li class="dian"></li>
+				<li class="dian"></li>
+				<li class="dian"></li>
+			</ul>
+		</div>
+	</div>
+</body>
+</html>
+<script>
+	// 1、初始值css
+	// 	con opacity:0;
+	// 	
+	// 2、获取元素 con
+	// 	
+	// 3、让图片自动播放
+	// 	设置时间函数
+	// 	让now循环 now++
+	
+	let con = document.querySelectorAll('.con');
+	let box = document.getElementsByClassName('box')[0];
+	let dian = document.getElementsByClassName('dian');
+	let now = 0;
+	let t = setInterval(move,1000);
+		function move(){
+			if(now == con.length){
+				now = 0;
+			}
+			con.forEach(function(ele,index){
+				dian[index].style.backgroundColor = '#fff';
+				ele.style.opacity = 0;
+			})
+			con[now].style.opacity = 1;
+			dian[now].style.backgroundColor = 'red';
+			now++;
+		}
+	box.onmouseover = function(){
+		clearInterval(t);
+	}
+	box.onmouseout = function(){
+		t = setInterval(move,1000);
+	}
+</script>
+
+
+<script>
+	// banner：
+	// 
+	// 1、初始化css
+	// 	ban：display：none
+	// 2、获取元素xuan ban
+	// 3、遍历
+	// 4、设置xuan  onmouseover
+	//	
+	let xuan = document.getElementsByClassName('xuan')
+	let ban = document.getElementsByClassName('ban_dw')
+	for(let i = 0; i < xuan.length; i++){
+		xuan[i].onmouseover = function(){
+			ban[i].style = 'display:block'
+		}
+		xuan[i].onmouseout = function(){
+			for(let j = 0; j < ban.length;j++){
+				ban[j].style = 'display:none'
+			}
+		}
+	}
+</script>
